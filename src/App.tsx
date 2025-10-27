@@ -15,7 +15,7 @@ export default function App() {
 
   useEffect(() => {
     // dev server can fetch directly from /src
-    fetch("/shots_sample.csv")
+    fetch("shots_sample.csv")
       .then(r => r.text())
       .then(t => setRaw(parseCSV(t)));
   }, []);
