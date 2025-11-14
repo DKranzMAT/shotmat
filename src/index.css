@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Sabres Mode <select> styling */
+.sabres-select {
+  color: white;
+  background-color: #0a2758; /* Sabres deep navy */
+  border-color: #194d96; /* lighter Sabres blue */
+}
+
+/* Dropdown items on hover / highlight (system-level pseudo-element) */
+.sabres-select option {
+  background-color: #0f3a7a; /* darker highlight */
+  color: white;
+}
+
+/* Global text selection color */
+::selection {
+  background: #194d96; /* Sabres blue (dark, readable) */
+  color: white;
+}
+
+/* For Firefox */
+::-moz-selection {
+  background: #194d96;
+  color: white;
+}
+
+/* Stronger selection color specifically for the stats line */
+.stats-line::selection {
+  background: #194d96; /* Sabres blue */
+  color: #ffffff;
+}
+
+.stats-line::-moz-selection {
+  background: #194d96;
+  color: #ffffff;
+}
+
