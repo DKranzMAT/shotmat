@@ -17,28 +17,54 @@ export default function App() {
   const [dark, setDark] = useState(false);
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
 
-  useEffect(() => {
-    // dev server can fetch directly from /src
-    fetch("shots_sample.csv")
-      .then((r) => r.text())
-      .then((t) => setRaw(parseCSV(t)));
-  }, []);
+useEffect(() => {
+  const base = import.meta.env.BASE_URL || "/";
+  const url = base + "shots_sample.csv";
+
+  fetch(url)
+    .then((r) => r.text())
+    .then((t) => {
+      const rows = parseCSV(t);
+
+      const rowsWithPlayers = rows.map((row) => {
+        let matched: Player | undefined;
+
+        // Match by jersey number
+        if (row.playerNumber) {
+          matched = ROSTER.find(
+            (p) => Number(p.jerseyNumber) === Number(row.playerNumber)
+          );
+        }
+
+        return {
+          ...row,
+          playerId: matched ? matched.id : null,
+          playerNumber: matched ? matched.jerseyNumber : null,
+          _playerObj: matched || null
+        };
+      });
+
+      setRaw(rowsWithPlayers);
+    });
+}, []); // <-- CLOSE THE EFFECT PROPERLY
+
 
   const teams = useMemo(
     () => Array.from(new Set(raw.map((r) => r.team))),
     [raw]
   );
 
-  const shots = useMemo(
-    () =>
-      raw.filter(
-        (s) =>
-          (period === "All" || s.period === Number(period)) &&
-          (team === "All" || s.team === team) &&
-          (result === "All" || s.result === result)
-      ),
-    [raw, period, team, result]
-  );
+const shots = useMemo(
+  () =>
+    raw.filter((s) =>
+      (period === "All" || s.period === Number(period)) &&
+      (team === "All" || s.team === team) &&
+      (result === "All" || s.result === result) &&
+      (selectedPlayer === null ||
+        s.playerNumber === selectedPlayer.jerseyNumber)
+    ),
+  [raw, period, team, result, selectedPlayer]
+);
 
   const goals = shots.filter((s) => s.result === "Goal").length;
   const sog = shots.filter(
