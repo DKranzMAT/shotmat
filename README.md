@@ -1,5 +1,5 @@
 
-# 🏒 ShotMat — NHL Shot Map
+# 🏒 ShotMat — Hockey Shot Map (Sabres theme)
 
 [![Live Demo](https://img.shields.io/badge/demo–live-brightgreen)](https://dkranzmat.github.io/shotmat/)
 [![GitHub Repo](https://img.shields.io/badge/source–code-blue)](https://github.com/DKranzMAT/shotmat)
@@ -13,9 +13,15 @@
 
 ## 🏒 Overview
 
-**ShotMat** is an interactive web app that visualizes hockey shot events on a full-rink layout.  
-It’s a lightweight front-end MVP built with **React**, **TypeScript**, and **Tailwind CSS**,  
-showcasing dynamic SVG rendering, CSV-driven data loading, and responsive UI design.
+ShotMat is a fast, interactive hockey analytics tool that plots shot events on a full NHL-regulation rink.
+Built as a clean front-end project, it combines:
+
+React for interactive UI
+TypeScript for strict data modeling
+Tailwind CSS for fast styling
+SVG-based rink rendering for pixel-perfect visuals
+CSV-driven loading for real-world hockey tracking workflows
+It’s built to be simple, portable, and deployable anywhere — ideal for portfolio work, coaching tools, team dashboards, or personal analytics.
 
 ---
 
