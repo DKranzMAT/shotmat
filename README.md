@@ -57,7 +57,7 @@ npm run deploy
 | Away | 10 | 5 | Blocked |
 
 
-![ShotMat App Preview](public/shotmat-preview.png)
+![ShotMat App Preview](public/shotmat-preview2.0.png)
 
 ---
 
