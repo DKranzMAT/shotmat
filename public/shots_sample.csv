@@ -1,5 +1,16 @@
 game_id,period,time,team,player,playerNumber,handed,shot_type,result,x,y,xg
 2024020156,1,12:34,CHI,Dylan Kranz,67,R,Wrist,Goal,40,15,0.12
 2024020156,1,08:10,CHI,Dylan Kranz,67,L,Slap,Shot,25,-12,0.05
-2024020156,2,04:55,DET,Dylan Stucker,92,R,Backhand,Miss,-35,10,0.03
-2024020156,3,14:22,DET,Noah Martin,48,L,Wrist,Goal,-28,-8,0.08
+2024020156,1,03:44,CHI,Cam Clarke,3,R,Wrist,Shot,18,6,0.04
+2024020156,1,02:11,CHI,Connor Crowe,23,L,Backhand,Miss,-22,14,0.03
+2024020156,2,15:02,CHI,Max Culen,12,R,Slap,Goal,36,-9,0.09
+2024020156,2,11:28,CHI,Beckett Fox,10,L,Tip,Shot,-12,-4,0.06
+2024020156,2,06:10,CHI,Ben Graveline,39,R,Wrist,Blocked,5,22,0.02
+2024020156,2,04:55,CHI,Dylan Stucker,92,R,Backhand,Miss,-35,10,0.03
+2024020156,3,17:20,CHI,Logan Larken,84,L,Wrist,Shot,30,4,0.05
+2024020156,3,14:22,CHI,Noah Martin,48,L,Wrist,Goal,-28,-8,0.08
+2024020156,3,09:51,CHI,Preston Mitchell,71,R,Slap,Shot,22,-5,0.04
+2024020156,3,04:33,CHI,Jacob Nalbandian,19,R,Wrist,Miss,-16,-16,0.02
+2024020156,3,02:10,CHI,Jimmy Rigatano,7,L,Tip,Blocked,7,18,0.01
+2024020156,3,01:26,CHI,Baylen Sahs,57,R,Wrist,Shot,15,3,0.03
+2024020156,3,00:44,CHI,William Winkoofsky,21,R,Backhand,Miss,-20,7,0.02

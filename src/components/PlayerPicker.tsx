@@ -22,23 +22,27 @@ export function PlayerPicker({
 }: PlayerPickerProps) {
   const [query, setQuery] = useState("");
 
-  // Build MiniSearch roster index
-  const { miniSearch, docs } = useMemo(() => {
-    const docs: PlayerDoc[] = roster.map((p) => ({
-      id: p.id,
-      jerseyNumber: p.jerseyNumber,
-      name: p.name,
-      text: `${p.jerseyNumber} ${p.name ?? ""}`.trim(),
-    }));
+const { miniSearch, docs } = useMemo(() => {
+  const docs: PlayerDoc[] = roster.map((p) => ({
+    id: p.id,
+    jerseyNumber: p.jerseyNumber,
+    name: p.name,
+    text: `${p.jerseyNumber} ${p.name ?? ""}`.trim(),
+  }));
 
-    const miniSearch = new MiniSearch({
-      fields: ["text"],
-      storeFields: ["id", "jerseyNumber", "name"],
-    });
+  const miniSearch = new MiniSearch({
+    fields: ["text", "name"],       // <— THIS IS THE MAGIC LINE
+    storeFields: ["id", "jerseyNumber", "name"],
+    searchOptions: {
+      prefix: true,
+      fuzzy: 0.2,
+    },
+  });
 
-    miniSearch.addAll(docs);
-    return { miniSearch, docs };
-  }, [roster]);
+  miniSearch.addAll(docs);
+  return { miniSearch, docs };
+}, [roster]);
+
 
   const trimmedQuery = query.trim();
 
