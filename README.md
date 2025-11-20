@@ -108,5 +108,5 @@ Deployment happens automatically when you push to `main`.
 
 **David Kranz**\
 Front-End Developer • UI Engineer\
-Portfolio: https://davidkranzwordpress.com\
+Portfolio: https://davidkranzwordpress.com
 GitHub: https://github.com/DKranzMAT
